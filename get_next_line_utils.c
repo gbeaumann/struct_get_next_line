@@ -30,7 +30,7 @@ char	read_check(t_read *strc)
 	{
 		strc->max = read(strc->fd, strc->str, BUFFER_SIZE);
 		strc->pos = 0;
-		if (strc-> max < 0)
+		if (strc->max <= 0)
 			return (0);
 	}
 	result = strc->str[strc->pos];

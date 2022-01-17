@@ -41,8 +41,8 @@ char	*ft_strjoin(char *s1, char ch)
 	}
 	str[i] = ch;
 	str[i + 1] = '\0';
-	if (str)
-		free(str);
+	if (s1)
+		free(s1);
 	return (str);
 }
 
