@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include    "get_next_line.h"
 
 int ft_strlen(char *str)
 {
@@ -14,16 +14,16 @@ int ft_strlen(char *str)
 
 char    *ft_strjoin(char *s1, char ch)
 {
-    char    *str;
     int     i;
     int     len;
+    char    *str;
 
     i = 0;
     len = ft_strlen(s1);
     str = (char *)malloc((len + 2) * sizeof(char));
     if (!str)
         return (NULL);
-    while (i < len) 
+    while (i < len)
     {
         str[i] = s1[i];
         i++;
@@ -37,7 +37,7 @@ char    *ft_strjoin(char *s1, char ch)
 
 char    *get_next_line(int fd)
 {
-    static t_read strct = {.fd = -1};
+    static t_read   strct = {.fd = -1};
     char    ch;
     char    *str;
 
@@ -45,7 +45,7 @@ char    *get_next_line(int fd)
     if (strct.fd != fd)
     {
         if (!init_read(fd, &strct))
-            return (NULL);
+            return (0);
     }
     ch = check_read(&strct);
     while (ch)

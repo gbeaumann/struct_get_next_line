@@ -5,7 +5,6 @@ int init_read(int fd, t_read *strct)
     strct->fd = fd;
     strct->pos = 0;
     strct->max = read(fd, strct->backup, BUFFER_SIZE);
-
     if (strct->max <= 0)
         return (0);
     else
@@ -14,7 +13,7 @@ int init_read(int fd, t_read *strct)
 
 char    check_read(t_read *strct)
 {
-    char    result;
+    char    resultat;
 
     if (strct->pos >= strct->max)
     {
@@ -23,7 +22,7 @@ char    check_read(t_read *strct)
         if (strct->max <= 0)
             return (0);
     }
-    result = strct->backup[strct->pos];
+    resultat = strct->backup[strct->pos];
     strct->pos++;
-    return (result);
+    return (resultat);
 }

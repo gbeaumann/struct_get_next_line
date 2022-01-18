@@ -6,7 +6,7 @@
 /*   By: gbeauman <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:34:48 by gbeauman          #+#    #+#             */
-/*   Updated: 2022/01/13 16:15:12 by gbeauman         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:03:45 by gbeauman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include	"get_next_line.h"
@@ -16,7 +16,7 @@ int	init_check(int fd, t_read *strc)
 	strc->pos = 0;
 	strc->fd = fd;
 	strc->max = read(fd, strc->str, BUFFER_SIZE);
-	if (strc->max < 0)
+	if (strc->max <= 0)
 		return (0);
 	else
 		return (1);
